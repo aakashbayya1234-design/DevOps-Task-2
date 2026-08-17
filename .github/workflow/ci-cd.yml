@@ -53,3 +53,16 @@ jobs:
 - name: Run Flake8
   run: |
     flake8 app
+
+          - name: Build Docker Image
+        run: |
+          docker build -t devops-flask-app:ci .
+
+      - name: Deployment Status
+        run: |
+          echo "========================================="
+          echo "Deployment Status: SUCCESS"
+          echo "Application: DevOps Flask Application"
+          echo "Environment: CI"
+          echo "Docker Image: devops-flask-app:ci"
+          echo "========================================="
